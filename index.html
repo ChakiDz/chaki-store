@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CHAKI متجر جزائري لمنتجات الطباعة ثلاثية الأبعاد">
+  <title>CHAKI⚡ | متجر الطباعة ثلاثية الأبعاد</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <!-- WhatsApp button -->
+  <div class="wa-float" onclick="openWA()" title="تواصل معنا">💬</div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mm-close" onclick="closeMobileMenu()">✕</button>
+    <div style="padding: 0 40px 20px; width: 100%;">
+      <div class="search-wrap" style="display: block;">
+        <input type="text" placeholder="ابحث عن منتج..." style="width: 100%;" oninput="handleNavbarSearch(this)">
+      </div>
+    </div>
+    <a onclick="navigateTo('home');closeMobileMenu()">🏠 الرئيسية</a>
+    <a onclick="navigateTo('products');closeMobileMenu()">🛍️ المنتجات</a>
+    <a onclick="navigateTo('free');closeMobileMenu()">🎁 مجاناً</a>
+    <a onclick="openWA();closeMobileMenu()">💬 تواصل معنا</a>
+    <button class="mm-cart-btn" onclick="navigateTo('cart');closeMobileMenu()">
+      🛒 السلة <span id="mm-cart-count"></span>
+    </button>
+  </div>
+
+  <!-- Mobile bottom nav -->
+  <nav class="mobile-bottom-nav" id="mobile-bottom-nav">
+    <div class="mbn-inner">
+      <button class="mbn-btn" id="mbn-home" onclick="navigateTo('home')">
+        <span class="mbn-icon">🏠</span>الرئيسية
+      </button>
+      <button class="mbn-btn" id="mbn-products" onclick="navigateTo('products')">
+        <span class="mbn-icon">🛍️</span>المنتجات
+      </button>
+      <button class="mbn-btn" id="mbn-cart" onclick="navigateTo('cart')">
+        <span class="mbn-icon">🛒</span>السلة
+        <span class="mbn-badge" id="mbn-badge"></span>
+      </button>
+      <button class="mbn-btn" id="mbn-wa" onclick="openWA()">
+        <span class="mbn-icon">💬</span>واتساب
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main app container -->
+  <div id="app"></div>
+
+  <!-- JavaScript — الترتيب مهم جداً -->
+  <script src="/utils/supabase.js" defer></script>
+  <script src="/utils/pixel.js" defer></script>
+  <script src="/utils/state.js" defer></script>
+  <script src="/utils/helpers.js" defer></script>
+  <script src="/components/Navbar.js" defer></script>
+  <script src="/components/Footer.js" defer></script>
+  <script src="/components/ProductCard.js" defer></script>
+  <script src="/pages/Home.js" defer></script>
+  <script src="/pages/Products.js" defer></script>
+  <script src="/pages/Free.js" defer></script>
+  <script src="/pages/Contact.js" defer></script>
+  <script src="/pages/Error404.js" defer></script>
+  <script src="/pages/Admin.js" defer></script>
+  <script src="/app.js" defer></script>
+
+</body>
+</html>
